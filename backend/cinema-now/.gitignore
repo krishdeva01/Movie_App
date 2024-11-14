@@ -1,0 +1,24 @@
+*.csv
+*.xml
+*.pyc
+*.swp
+*.log
+*.xlsx
+# *.sql*
+*.db
+.ropeproject
+.cache
+.env
+venv/
+.docker_env*
+.coverage
+*.log*
+*docker_env*
+.prod_env*
+.stage_env*
+delete
+envs
+scratch.py
+git_email_rewrite.sh
+.idea/
+.__pycharm__/

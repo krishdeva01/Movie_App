@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./backend/cinema-now/nginx
+    volumes:
+      - ./backend/cinema-now/media:/app/media 
+    restart: always
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend        
+  frontend:
+    container_name: frontend
+    build:
+      context: ./cinema-now
+    ports:
+      - '3000:3000'       
+    depends_on:
+      - backend           
+  backend:
+    container_name: backend
+    build:
+      context: ./backend/cinema-now  
+    volumes:
+      - ./backend/cinema-now/media:/app/media
